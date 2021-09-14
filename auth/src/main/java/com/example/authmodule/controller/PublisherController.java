@@ -21,30 +21,7 @@ public class PublisherController {
     List<Book> books = null;
     Book book = new Book();
 
-    //returns paginated    true
-//    @GetMapping("/get_books/{pageNo}")
-//    public List<Book> getBooks(@PathVariable("pageNo") Long pageNo,
-//                               @RequestParam("sortField") String sortField,
-//                               @RequestParam("sortDirection") String sortDirection) {
-//
-//
-//        try {
-//            ResponseEntity<List<Book>> claimResponse = restTemplate.exchange(
-//                    "http://localhost:8080/books/page/" + pageNo+ "?sortField="+sortField+"&sortDirection="+sortDirection ,
-//                    HttpMethod.GET,
-//                    null,
-//                    new ParameterizedTypeReference<List<Book>>() {
-//                    });
-//            if (claimResponse != null && claimResponse.hasBody()) {
-//                books = claimResponse.getBody();
-//
-//            }
-//        } catch (RestClientException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        return books;
-//    }
+
 
     @GetMapping("/publisher")
     public ModelAndView getBooks() {
@@ -71,28 +48,6 @@ public class PublisherController {
         return modelAndView;
     }
 
-    //
-//    @GetMapping("get_book/{id}")
-//    public Book getBook(@PathVariable("id") Long id){
-//        Book book = null;
-//        String uri = "http://localhost:8080/books/" ;
-//        try {
-//            ResponseEntity<Book> claimResponse = restTemplate.exchange(
-//                    uri + id,
-//                    HttpMethod.GET,
-//                    null,
-//                    new ParameterizedTypeReference<Book>() {
-//                    });
-//            if (claimResponse != null && claimResponse.hasBody()) {
-//                book = claimResponse.getBody();
-//
-//            }
-//        } catch (RestClientException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        return book;
-//    }
 
 
     @GetMapping("/get_book/{id}")
@@ -120,12 +75,7 @@ public class PublisherController {
         return modelAndView;
     }
 
-    //true
-//    @PostMapping("add")
-//    public void addBook(@RequestBody Book book){
-//        String uri = "http://localhost:8080/books/add";
-//        restTemplate.postForObject(uri, book, Book.class);
-//    }
+
 
     @GetMapping("/addBook")
     public ModelAndView addBook(){
@@ -143,12 +93,7 @@ public class PublisherController {
         return modelAndView;
     }
 
-    //true
-//    @DeleteMapping("delete/{id}")
-//    public void deleteBook(@PathVariable("id") Long id){
-//        String uri = "http://localhost:8080/books/delete/" + id;
-//        restTemplate.delete(uri);
-//    }
+  
 
     @RequestMapping("/deleteBook/{id}")
     public ModelAndView delete(@PathVariable("id") Long id) {
@@ -165,18 +110,6 @@ public class PublisherController {
         URI url = URI.create("http://localhost:8080/books/update/"+id);
         restTemplate.put(url, book);
     }
-
-//    @PutMapping("update/{id}")
-//    public ModelAndView updateBook(@PathVariable("id") Long id, @RequestBody Book book){
-//        URI url = URI.create("http://localhost:8080/books/update/"+id);
-//        restTemplate.put(url, book);
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("/publisher/edit_book");
-////        modelAndView.addObject("")
-//        return modelAndView;
-//    }
-
-
 
 
 
