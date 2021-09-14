@@ -65,30 +65,7 @@ public class SearchController {
     }
 
 
-    //correct
-//    @GetMapping("/all")
-//    public List<Book> getBooks() {
-//        RestTemplate restTemplate = new RestTemplate();
-//
-////        List<Book> books = null;
-//        try {
-//            ResponseEntity<List<Book>> claimResponse = restTemplate.exchange(
-//                    "http://localhost:8080/books/all",
-//                    HttpMethod.GET,
-//                    null,
-//                    new ParameterizedTypeReference<List<Book>>() {
-//                    });
-//            if (claimResponse != null && claimResponse.hasBody()) {
-//                books = claimResponse.getBody();
-//
-//            }
-//        } catch (RestClientException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        return books;
-//    }
-
+  
     @GetMapping("/search")
     public BookWrapper search(@RequestParam("searchable") String searchable){
         getBooks();
