@@ -31,13 +31,6 @@ public class AdminService {
         userRepository.deleteById(id);
     }
 
-//    @Transactional
-//    public void updateUser(Long id, String username){
-////        Users user = userRepository.findByUsername(username);
-//        Users user = userRepository.findUSerById(id);
-//        user.setUsername(username);
-//
-//    }
 
     @Transactional
     public void update(Long id, Users users){
