@@ -31,4 +31,5 @@ Three modules is used in this app and the user roles are divided to Admins - Pub
 - all User's actions like filtering by published-year or posted-date or book-name is declared in this module
 - all User's actions like searching by tags is implemented here
 - service module implements main function for searching and filtering
-- this module interact with auther module via RESTful API
+- this module interact with auther module via RESTful API 
+
